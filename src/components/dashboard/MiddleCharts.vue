@@ -1,25 +1,21 @@
 <template>
   <!-- ================= MIDDLE COLUMN (3 cols) ================= -->
-
   <div class="col-span-12 lg:col-span-3 space-y-4">
-    <div class="bg-white rounded-xl shadow-sm p-5">
-      <h3 class="text-sm font-semibold text-gray-800">Profit/Loss</h3>
-      <p class="text-xs text-gray-400 mt-2">Area chart placeholder</p>
-    </div>
+    <AreaChartCard title="Profit/Loss" />
 
-    <div class="bg-white rounded-xl shadow-sm p-5">
-      <h3 class="text-sm font-semibold text-gray-800">Goal Completion</h3>
-      <p class="text-xs text-gray-400 mt-2">Progress bars placeholder</p>
-    </div>
+    <GoalCompletionCard />
 
-    <div class="bg-white rounded-xl shadow-sm p-5">
-      <h3 class="text-sm font-semibold text-gray-800">Cash In Bank</h3>
-      <p class="text-xs text-gray-400 mt-2">Line chart placeholder</p>
-    </div>
+    <LineChartCard title="Cash In Bank" />
 
-    <div class="bg-white rounded-xl shadow-sm p-5">
-      <h3 class="text-sm font-semibold text-gray-800">NetFlow</h3>
-      <p class="text-xs text-gray-400 mt-2">Line chart placeholder</p>
-    </div>
+    <LineChartCard
+      title="NetFlow"
+      :values="[300, 280, 260, 250, 240, 230, 220, 210]"
+    />
   </div>
 </template>
+
+<script setup>
+import AreaChartCard from './AreaChartCard.vue'
+import GoalCompletionCard from './GoalCompletionCard.vue'
+import LineChartCard from './LineChartCard.vue'
+</script>
