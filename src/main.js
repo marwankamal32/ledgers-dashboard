@@ -1,5 +1,10 @@
 import { createApp } from 'vue'
+import PrimeVue from 'primevue/config'
+import Chart from 'primevue/chart'
 import './style.css'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+const app = createApp(App)
+app.use(PrimeVue)
+app.component('Chart', Chart)
+app.mount('#app')
