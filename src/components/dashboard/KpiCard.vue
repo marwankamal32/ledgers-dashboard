@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-white rounded-3xl shadow-sm p-3 py-4 w-32 h-32 flex flex-col justify-between">
+    <div class="bg-white rounded-3xl shadow-sm p-3 py-4  flex flex-col justify-between">
       <!-- Title (all cards) -->
       <p class="text-xs font-bold text-gray-800">
         {{ title }}
