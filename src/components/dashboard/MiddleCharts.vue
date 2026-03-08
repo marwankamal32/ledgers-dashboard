@@ -1,21 +1,20 @@
 <template>
-  <!-- ================= MIDDLE COLUMN (3 cols) ================= -->
-  <div class="col-span-12 lg:col-span-3 space-y-4">
-    <AreaChartCard title="Profit/Loss" />
+  <div>
+    <div class="rounded-3xl  flex flex-col lg:flex-row gap-4 w-full">
+      <div class="flex-1">
+        <BarChartCard />
+      </div>
 
-    <GoalCompletionCard />
-
-    <LineChartCard title="Cash In Bank" />
-
-    <LineChartCard
-      title="NetFlow"
-      :values="[300, 280, 260, 250, 240, 230, 220, 210]"
-    />
+      <div class="flex flex-col gap-4 w-full lg:w-1/3">
+        <ProfitLossChartCard />
+        <GoalCompletionCard />
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
-import AreaChartCard from './AreaChartCard.vue'
-import GoalCompletionCard from './GoalCompletionCard.vue'
-import LineChartCard from './LineChartCard.vue'
+import ProfitLossChartCard from "./ProfitLossChartCard.vue";
+import GoalCompletionCard from "./GoalCompletionCard.vue";
+import BarChartCard from "./BarChartCard.vue";
 </script>
