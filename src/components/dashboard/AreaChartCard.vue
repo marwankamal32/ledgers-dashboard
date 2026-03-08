@@ -1,53 +1,99 @@
 <template>
-    <ChartCard :title="title" :caption="caption">
+  <ChartCard :title="title" :caption="caption">
+    <div class="w-full min-h-[200px] sm:min-h-[220px] md:min-h-[200px] xl:min-h-[250px] flex">
       <Chart
         type="line"
         :data="chartData"
         :options="chartOptions"
-        class="h-[220px]"
+        class="flex-1"
       />
-    </ChartCard>
-  </template>
-  
-  <script setup>
-  import { ref, onMounted } from 'vue'
-  import ChartCard from './ChartCard.vue'
-  
-  const props = defineProps({
-    title: { type: String, required: true },
-    caption: { type: String, default: '' }
-  })
-  
-  const chartData = ref()
-  const chartOptions = ref({
-    responsive: true,
-    maintainAspectRatio: false,
-    scales: {
-      y: { beginAtZero: true }
-    }
-  })
-  
-  onMounted(() => {
-    chartData.value = {
-      labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct'],
-      datasets: [
-        {
-          label: 'Inflow',
-          data: [40, 60, 80, 70, 90, 110, 100, 120, 140, 130],
-          borderColor: 'rgb(59, 130, 246)',
-          backgroundColor: 'rgba(59, 130, 246, 0.2)',
-          fill: true,
-          tension: 0.3
+    </div>
+  </ChartCard>
+</template>
+
+<script setup>
+import { ref, onMounted } from "vue";
+import ChartCard from "./ChartCard.vue";
+import { defaultChartOptions, mediumChartPointStyle } from "../../utils/chartOptions";
+import { createGradientCallback, gradientPresets } from "../../utils/chartGradients";
+
+const props = defineProps({
+  title: { type: String, required: true },
+  caption: { type: String, default: "" },
+});
+
+const chartData = ref();
+const chartOptions = ref({
+  ...defaultChartOptions,
+  layout: {
+    padding: 0,
+  },
+  plugins: {
+    ...defaultChartOptions.plugins,
+    legend: {
+      display: false,
+      labels: {
+        ...defaultChartOptions.plugins.legend.labels,
+        padding: 15,
+        font: {
+          size: 11,
         },
-        {
-          label: 'Outflow',
-          data: [30, 45, 60, 80, 70, 85, 95, 100, 110, 115],
-          borderColor: 'rgb(244, 114, 182)',
-          backgroundColor: 'rgba(244, 114, 182, 0.2)',
-          fill: true,
-          tension: 0.3
-        }
-      ]
-    }
-  })
-  </script>
+      },
+    },
+  },
+  elements: {
+    point: mediumChartPointStyle
+  },
+  scales: {
+    ...defaultChartOptions.scales,
+    y: {
+      ...defaultChartOptions.scales.y,
+      beginAtZero: true,
+      display: false,
+    },
+  },
+});
+
+onMounted(() => {
+  chartData.value = {
+    labels: [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ],
+    datasets: [
+      {
+        label: "Outflow",
+        data: [200, 100, 300, 200, 400, 350, 400, 450, 350, 400, 450, 500],
+        borderColor: "#FFFFFF",
+        backgroundColor: createGradientCallback(gradientPresets.pink),
+        fill: true,
+        tension: 0.5,
+        borderWidth: 2,
+        pointBackgroundColor: "#FFFFFF",
+        pointBorderColor: "#FFFFFF",
+      },
+      {
+        label: "Inflow",
+        data: [500, 400, 600, 500, 700, 650, 700, 750, 650, 700, 750, 800],
+        borderColor: "#FFFFFF",
+        backgroundColor: createGradientCallback(gradientPresets.blue),
+        fill: true,
+        tension: 0.5,
+        borderWidth: 2,
+        pointBackgroundColor: "#FFFFFF",
+        pointBorderColor: "#FFFFFF",
+      },
+    ],
+  };
+});
+</script>
