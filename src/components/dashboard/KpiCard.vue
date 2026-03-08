@@ -10,7 +10,7 @@
     <!-- Normal card: one value + change + vs previous month -->
     <template v-if="!runway">
       <div class="flex flex-col gap-0 mt-1">
-        <span class="text-xl font-semibold text-gray-900">{{ value }}</span>
+        <span class="text-lg font-semibold text-gray-900">{{ value }}</span>
         <span
           v-if="change"
           class="text-xs font-medium mt-1 ml-auto"
@@ -19,7 +19,7 @@
           {{ change }}
         </span>
       </div>
-      <p class="text-xs text-gray-400">
+      <p class="text-[9px] font-bold text-gray-400">
         {{ comparisonText }}
       </p>
     </template>
