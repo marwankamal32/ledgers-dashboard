@@ -26,8 +26,8 @@
 
     <!-- Runway card: two values with labels -->
     <template v-else>
-      <div class="flex-1 flex items-center">
-        <div class="flex gap-6 w-full">
+      <div class="flex-1 flex items-center min-w-0">
+        <div class="flex gap-2 sm:gap-4 md:gap-6 w-full min-w-0">
           <div>
             <span class="text-lg font-semibold text-gray-900">{{
               leftValue

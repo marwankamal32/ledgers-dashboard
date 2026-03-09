@@ -1,6 +1,6 @@
 <template>
   <AppLayout>
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-x-4 gap-y-3 auto-rows-[min-content]">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-x-3 gap-y-3 sm:gap-x-4 auto-rows-[min-content] min-w-0 w-full">
       <KpiSection class="col-span-12 lg:col-span-7" />
       <RightTuners class="col-span-12 lg:col-span-5 lg:row-span-3" />
       <MiddleCharts class="col-span-12 lg:col-span-7" />

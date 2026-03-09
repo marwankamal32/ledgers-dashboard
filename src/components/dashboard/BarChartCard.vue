@@ -4,12 +4,12 @@
     caption="Loaded in chart and seasonally + monitoring tighter"
     :show-dropdown="true"
   >
-    <div class="w-full min- flex">
+    <div class="w-full min-w-0 overflow-hidden relative h-[220px] sm:h-[260px] md:h-[300px] xl:h-[300px]">
       <Chart
         type="bar"
         :data="chartData"
         :options="chartOptions"
-        class="flex-1 h-[220px] sm:h-[260px] md:h-[300px] xl:h-[300px]"
+        class="!w-full !h-full !max-w-full block"
       />
     </div>
   </ChartCard>

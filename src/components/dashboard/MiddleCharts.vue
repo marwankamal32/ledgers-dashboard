@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div class="rounded-3xl  flex flex-col lg:flex-row gap-4 w-full">
-      <div class="flex-1">
+    <div class="rounded-3xl flex flex-col lg:flex-row gap-4 w-full min-w-0">
+      <div class="flex-1 min-w-0">
         <BarChartCard />
       </div>
 
-      <div class="flex flex-col gap-4 w-full lg:w-1/3">
+      <div class="flex flex-col gap-4 w-full min-w-0 lg:w-1/3">
         <ProfitLossChartCard />
         <GoalCompletionCard />
       </div>

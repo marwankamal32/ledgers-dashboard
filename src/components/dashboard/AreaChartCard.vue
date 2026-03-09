@@ -1,11 +1,11 @@
 <template>
   <ChartCard :title="title" :caption="caption">
-    <div class="w-full min-h-[200px] sm:min-h-[220px] md:min-h-[200px] xl:min-h-[250px] flex">
+    <div class="w-full min-w-0 overflow-hidden relative h-[200px] sm:h-[220px] md:h-[200px] xl:h-[250px]">
       <Chart
         type="line"
         :data="chartData"
         :options="chartOptions"
-        class="flex-1"
+        class="!w-full !h-full !max-w-full block"
       />
     </div>
   </ChartCard>

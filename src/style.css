@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Prevent horizontal scroll and allow flex children to shrink */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+#app {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Optional: thinner scrollbar for header tabs on mobile */
+.header-tabs-scroll {
+  scrollbar-width: thin;
+}
+.header-tabs-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+.header-tabs-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}

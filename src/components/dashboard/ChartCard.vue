@@ -1,7 +1,7 @@
 <template>
-  <div class="bg-white rounded-3xl shadow-sm" :class="noPadding ? '' : 'p-5'">
-    <div class="flex items-center justify-between mb-3">
-      <h3 class="text-sm font-semibold text-gray-800">
+  <div class="bg-white rounded-3xl shadow-sm min-w-0" :class="noPadding ? '' : 'p-4 sm:p-5'">
+    <div class="flex items-center justify-between mb-3 min-w-0">
+      <h3 class="text-sm font-semibold text-gray-800 truncate">
         {{ title }}
       </h3>
       <i
@@ -10,7 +10,7 @@
       ></i>
     </div>
 
-    <div :class="minHeight">
+    <div :class="minHeight" class="min-w-0 overflow-hidden">
       <slot />
     </div>
 

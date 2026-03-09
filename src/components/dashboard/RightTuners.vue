@@ -41,8 +41,8 @@
         </div>
 
         <!-- Output Snapshot -->
-        <div class="mt-3 bg-[#4499E3] rounded-2xl text-white p-2">
-          <table class="w-full text-xs tuner-table">
+        <div class="mt-3 bg-[#4499E3] rounded-2xl text-white p-2 overflow-x-auto">
+          <table class="w-full min-w-[280px] text-xs tuner-table">
             <thead>
               <tr class="text-left text-white/90">
                 <th class="pb-2 font-bold">Output snapshot</th>
@@ -144,8 +144,8 @@
         </div>
 
         <!-- Output Snapshot -->
-        <div class="mt-3 bg-[#4499E3] rounded-2xl text-white p-3">
-          <table class="w-full text-xs tuner-table">
+        <div class="mt-3 bg-[#4499E3] rounded-2xl text-white p-3 overflow-x-auto">
+          <table class="w-full min-w-[280px] text-xs tuner-table">
             <thead>
               <tr class="text-left text-white/90">
                 <th class="pb-2 font-bold">Output snapshot</th>
