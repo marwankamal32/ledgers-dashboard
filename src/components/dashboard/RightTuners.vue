@@ -207,7 +207,7 @@
   appearance: none;
   height: 6px;
   border-radius: 9999px;
-  background: rgb(191 219 254);
+  background: linear-gradient(to right, #3b82f6 50%, #e5e7eb 50%);
   cursor: pointer;
   outline: none;
 }
